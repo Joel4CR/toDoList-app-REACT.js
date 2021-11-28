@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import List from './components/List';
 
 function App() {
 
@@ -13,9 +14,7 @@ function handlerNewItem(event) {
 function onclick() {
   setItem(prevValue=>[...prevValue,saveItem ])
   setSaveItem("");
-  key+=key;
 }
-
 
 
 
@@ -31,9 +30,12 @@ function onclick() {
     </div>
     <div>
       <ul>
-        {item.map((newItem,key)=>{
+        {item.map((newItem)=>{
         return(
-        <li key={key}>{newItem}</li>
+        <List 
+        key={key++}
+        newItem={newItem}
+        />
           )
 
         })
