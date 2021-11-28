@@ -16,7 +16,16 @@ function onclick() {
   setSaveItem("");
 }
 
-
+function deleteItem(id) {
+  setItem(prevItems=>{
+    return  prevItems.filter(
+      (items,index)=>{
+        return index!==id
+      }
+    )
+  })
+  console.log(id);
+}
 
 
   return(
@@ -30,10 +39,12 @@ function onclick() {
     </div>
     <div>
       <ul>
-        {item.map((newItem)=>{
+        {item.map((newItem,key)=>{
         return(
         <List 
-        key={key++}
+        key={key}
+        id={key}
+        delete={deleteItem}
         newItem={newItem}
         />
           )
