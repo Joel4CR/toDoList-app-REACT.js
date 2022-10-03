@@ -3,8 +3,8 @@ import List from './components/List';
 
 function App() {
 
-const[item,setItem]=useState([])
-const[saveItem,setSaveItem]=useState("")
+const  [item,setItem] =useState([])
+const [saveItem,setSaveItem]=useState("")
 let key=1;
 
 function handlerNewItem(event) {
